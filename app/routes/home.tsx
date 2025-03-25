@@ -9,9 +9,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export function loader({ context }: Route.LoaderArgs) {
+  console.log('hello world')
   return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
+  console.log('hello world')
   return <Welcome message={loaderData.message} />;
 }
